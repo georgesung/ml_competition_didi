@@ -14,7 +14,7 @@ The provided data includes information about:
   * Traffic time-series information for each district
   * Weather time-series information for each district
 
-DiDi provides the training data containing all the informationc categories above, in addition to test data withouth demand-supply gap information, used to calculate the final score and rankings.
+DiDi provides the training data containing all the information categories above, in addition to test data without demand-supply gap information.
 
 The full data description and download link are available at http://research.xiaojukeji.com/competition/detail.action?competitionId=DiTech2016
 
@@ -44,7 +44,7 @@ I also pre-processed the order information to calculate the demand-supply gap fo
 Then, I tiled and concatenated all of the above as necessary, to create the training data feature tensor of shape (NUM_DATA_POINTS, NUM_FEATURES), and label tensor of shape (NUM_DATA_POINTS, 1).
 Further, I removed all data points where the demand-supply gap is 0, because a demand-supply gap of 0 is not factored into the final score of the competition.
 
-Finally, I ran principle component analysis (PCA) on the data to reduce dimensionality, since I had many one-hot feature vectors.
+Finally, I ran principle component analysis (PCA) on the data to reduce its dimensionality, since I had many one-hot feature vectors.
 
 ### Training and Test Result Generation
 The creation of the neural network and training process was performed using TensorFlow.
@@ -74,7 +74,7 @@ After finding the optimal hyper-parameters, I used them to perform the final tra
   * TensorFlow
 
 ### Steps to Run
-  * git clone <this_repository>
+  * git clone (this repository)
   * cd ml_competition_didi
   * (download the training and test data into 'data/' directory)
   * cd preprocess_data
